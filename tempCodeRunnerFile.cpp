@@ -1,0 +1,4 @@
+~Queue()
+    {
+        delete arr;
+    }
