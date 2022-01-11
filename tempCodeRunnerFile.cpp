@@ -1,4 +1,0 @@
-~Queue()
-    {
-        delete arr;
-    }
