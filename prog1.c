@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+int size=0;
 void display(int arr[], int n)
 {
     int i;
@@ -88,7 +89,7 @@ void Remove(int arr[], int n, int x)
 }
 int main()
 {
-    int size;
+    // int size;
     printf("Enter the size of the Array:\n");
     scanf("%d", &size);
     int arr[size];
