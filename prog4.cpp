@@ -15,8 +15,6 @@ public:
         front = rear = 0;
         arr=new int[c];
     }
-
-
     bool isFull()
     {
 
