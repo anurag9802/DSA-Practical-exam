@@ -17,6 +17,7 @@ void display(node *head)
     }
     cout << endl;
 }
+
 node* insertion_beginning(node *head)
 {
     node *newnode;
