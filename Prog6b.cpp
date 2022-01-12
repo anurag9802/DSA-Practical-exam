@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 void selection_sort (int n, int arr[100], int pass);
+
 int main()
 {
-    int n,pass = 0;
+    int n,pass = 0, x;
     cout << "Enter the number of elements :" << endl;
     cin >> n;
     cout << "The array elements are" << endl;
@@ -14,6 +15,7 @@ int main()
     }
     selection_sort (n, arr, pass);
 }
+
 void selection_sort (int n, int arr[100], int pass)
 {
     int min = arr[0], index = 0;
