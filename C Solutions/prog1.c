@@ -7,7 +7,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-int size=0;
 void display(int arr[], int n)
 {
     int i;
@@ -89,7 +88,7 @@ void Remove(int arr[], int n, int x)
 }
 int main()
 {
-    // int size;
+    int size;
     printf("Enter the size of the Array:\n");
     scanf("%d", &size);
     int arr[size];
@@ -101,53 +100,50 @@ int main()
     }
     printf("\n");
     fflush(stdin);
+    printf("\nEnter a to update\nEnter b to insert\nEnter c to search\nEnter d to remove\nEnter e to display\n");
     char ch;
-    do
+    scanf("%c", &ch);
+    switch (ch)
     {
-        printf("\nEnter x to exit  a to update  b to insert c to search  d to remove  e to display\n");
-        scanf("%c", &ch);
-        switch (ch)
+    case 'a':
+        printf("\nEnter the element and position:\n");
+        int element, position;
+        scanf("%d %d", &element, &position);
+        update(arr, size, element, position);
+        display(arr, size);
+        break;
+    case 'b':
+        printf("\nEnter the element and position: \n");
+        int e, p;
+        scanf("%d %d", &e, &p);
+        insert(arr, size, e, p);
+        break;
+    case 'c':
+        printf("\nEnter the element: \n");
+        int e1;
+        scanf("%d", &e1);
+        int s = search(arr, size, e1);
+        if (s == 1)
         {
-        case 'a':
-            printf("\nEnter the element and position:\n");
-            int element, position;
-            scanf("%d %d", &element, &position);
-            update(arr, size, element, position);
-            display(arr, size);
-            break;
-        case 'b':
-            printf("\nEnter the element and position: \n");
-            int e, p;
-            scanf("%d %d", &e, &p);
-            insert(arr, size, e, p);
-            break;
-        case 'c':
-            printf("\nEnter the element: \n");
-            int e1;
-            scanf("%d", &e1);
-            int s = search(arr, size, e1);
-            if (s == 1)
-            {
-                printf("Element %d is present in the array\n", e1);
-            }
-            else
-            {
-                printf("Element %d is not present in the array\n", e1);
-            }
-            break;
-        case 'd':
-            printf("\nEnter the element: \n");
-            int e2;
-            scanf("%d", &e2);
-            Remove(arr, size, e2);
-            break;
-        case 'e':
-            display(arr, size);
-            break;
-        default:
-            printf("Invalid Input!!!");
-            break;
+            printf("Element %d is present in the array\n", e1);
         }
-    } while (ch != 'x');
+        else
+        {
+            printf("Element %d is not present in the array\n", e1);
+        }
+        break;
+    case 'd':
+        printf("\nEnter the element: \n");
+        int e2;
+        scanf("%d", &e2);
+        Remove(arr, size, e2);
+        break;
+    case 'e':
+        display(arr, size);
+        break;
+    default:
+        printf("Invalid Input!!!");
+        break;
+    }
     return 0;
 }
